@@ -1,0 +1,10 @@
+<ul class="chat">
+  <% @lines.reverse.each do |line| %>
+  <li>
+    <span title="<%= pretty_timestamp_time(line[:timestamp]) %>">
+      <span class="username">&lt;<%= line[:username] %>&gt;</span>
+      <span class="message"><%= line[:message] %></span>
+    </span>
+  </li>
+  <% end %>
+</ul>

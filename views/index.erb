@@ -17,18 +17,15 @@
     <div id="message_container">
       <input type="text" name="message" id="message" placeholder="Type your message here..." /><button name="submit" id="submit">Send</button>
     </div>
+    <div id="emoticons">
+      <img class="emoticon" id="wink" src="http://img1.wikia.nocookie.net/__cb20140214223249/clubpenguin/images/e/e1/CPNext_Emoticon_-_Winking_Face.png">
+      <img class="emoticon" id="happy" src="http://vignette4.wikia.nocookie.net/clubpenguin/images/c/c4/CPNext_Emoticon_-_Laughing_Face.png/revision/latest?cb=20140214222055">
+      <img class="emoticon" id="love" src="http://findicons.com/files/icons/2386/networking/256/emoticon_inlove.png">
+    </div>
   </form>
 
-  <ul class="chat">
-    <% @lines.reverse.each do |line| %>
-    <li>
-      <span title="<%= pretty_timestamp_time(line[:timestamp]) %>">
-        <span class="username">&lt;<%= line[:username] %>&gt;</span>
-        <span class="message"><%= line[:message] %></span>
-      </span>
-    </li>
-    <% end %>
-  </ul>
-
+  <div id="chat-box">
+    <%= erb(:chat, :layout => false) %>
+  </div>
 </body>
 </html>

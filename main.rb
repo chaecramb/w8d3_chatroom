@@ -9,6 +9,12 @@ get '/' do
   erb :index
 end
 
+get '/chat' do
+  @username = params["username"] || ""
+  @lines = chatlines.last(10)
+  erb :chat
+end
+
 post '/chat' do
 
   make_comment({ username: params["username"], message: params["message"] })

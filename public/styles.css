@@ -24,6 +24,11 @@ label {
   margin-right: 5px;
 }
 
+.emoticon {
+  height: 30px;
+  width: auto;
+}
+
 .username {
   font-weight: bold;
 }
